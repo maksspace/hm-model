@@ -1,0 +1,1 @@
+gcc -o bin/one_neuron one_neuron.c lib/rkf.c lib/vector.c

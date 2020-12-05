@@ -1,1 +1,3 @@
-# hm-model
+# Build and Run
+
+$ ./build
