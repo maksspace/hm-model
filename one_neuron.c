@@ -1,14 +1,14 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "lib/vector.h"
 #include "lib/rkf.h"
 
 void f(double *vec_result, double *vec_n, double t);
 void f_step_print(double *vec_n, double t);
 
-FILE *dataTOutput;
-FILE *dataXOutput;
+FILE *output;
+
 double A = 3;
-double I = 3.26;
 double U = 0.0021;
 double R = 4;
 double C = 1.6;
@@ -17,11 +17,14 @@ double t0 = 0;
 double t1 = 10000;
 double h = 0.01;
 
-int main()
-{
-    dataTOutput = fopen("output/dataT.csv", "w");
-    dataXOutput = fopen("output/dataX.csv", "w");
+double I = 3.26;
 
+int main(int argc, char *argv[])
+{
+    char* i = argv[1];
+    char* output_path = argv[2];
+    I = atof(i);
+    output = fopen(output_path, "w");
     double vec_n[3] = {0};
     rkf_solve(t0, t1, vec_n, 3, f, f_step_print, h);
 }
@@ -38,6 +41,5 @@ void f(double *vec_result, double *vec_n, double t)
 
 void f_step_print(double *vec_n, double t)
 {
-    fprintf(dataTOutput, "%f\n", t);
-    fprintf(dataXOutput, "%f\n", vec_n[0]);
+    fprintf(output, "%f,%f\n", t, vec_n[0]);
 }
