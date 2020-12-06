@@ -1,3 +1,4 @@
+// vector.h
 void mul_vector_by(int vec_size, double *vec_result, double *vec, double a);
 void div_vector_by(int vec_size, double *vec_result, double *vec, double a);
 void sum_vectors(int vec_size, double *vec_result, double *vec1, double *vec2);
