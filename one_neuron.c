@@ -15,14 +15,14 @@ double t0 = 0;
 double t1 = 10000;
 double h = 0.001;
 double I = 3.26;
-FILE* output;
+FILE *output;
 
 int main(int argc, char *argv[])
 {
-    char* i_str = argv[1];
-    char* t1_str = argv[2];
-    char* h_str = argv[3];
-    char* output_path = argv[4];
+    char *i_str = argv[1];
+    char *t1_str = argv[2];
+    char *h_str = argv[3];
+    char *output_path = argv[4];
     double vec_n[3] = {0, 0, 0};
     int steps = (int)(t1 - t0) / h;
 

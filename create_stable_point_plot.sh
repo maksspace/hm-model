@@ -1,0 +1,1 @@
+gnuplot -e "set datafile separator ','; set title 'Зависимость x от тока I'; set terminal png size 640, 420; set ylabel 'x(I)'; set xlabel 'I'; set output 'stable_point_plots/x_i.png'; plot 'stable_point_output/output.csv' using 1:2 with lines lw 2 lt rgb 'blue' title 'x(I)'; "
